@@ -8,6 +8,9 @@ const Home: NextPage = () => {
     setInputValue(e.target.value)
   }
 
+  // []: 内側の文字どれか１文字を指す
+  // ^: []内の先頭に置くと、否定を表す
+  // つまり、この正規表現は、-, (, ), 数字, *, +, .に該当する。そしてreplaceで''にする。
   // https://stackoverflow.com/a/6479415
   const calculator = (v:string) => eval(v.replace(/[^-()\d/*+.]/g, ''))
 
